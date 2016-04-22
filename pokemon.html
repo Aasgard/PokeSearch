@@ -1,0 +1,75 @@
+<head>
+    <title>{{page_title}} - {{pokemon.name | capitalize}}</title>
+</head>
+<div class="container">
+
+    <!--<div class="row" ng-show="!loading">
+        <div class="col-xs-12">
+            <p class="welcome_message text-center" style="vertical-align: middle" id="pokemon_details_title" ng-cloak>
+                #{{pokemon.id}} - <span style="text-transform: capitalize">{{pokemon.name}}</span> <img
+                    ng-src="assets/images/pokemons/{{image_name}}" alt="PokemonSprite" class="img-responsive pull-right"
+                    draggable="false" style="width: 15%">
+            </p>
+        </div>
+    </div>-->
+
+    <div class="row" ng-show="!loading" style="display: table; margin: 0 auto;">
+        <div class="col-xs-12 col-md-8 cell_to_vertical_align" style="vertical-align: middle">
+            <div class="welcome_message text-center" id="pokemon_details_title" ng-cloak>
+                <span style="text-transform: capitalize" class="ng-binding">{{pokemon.name}}</span></div>
+        </div>
+        <div class="col-xs-12 col-md-4 cell_to_vertical_align">
+            <!--<img ng-src="assets/images/pokemons/{{image_name}}" alt="PokemonSprite" id="pokemon_image_details"
+                 class="img-responsive center-block "
+                 draggable="false" style="width: 50%">-->
+            <img src="http://img.pokemondb.net/artwork/{{pokemon.name}}.jpg" id="pokemon_image_details"
+                 alt="Image Pokémon" style="width: 60%;" class="img-circle img-thumbnail img-responsive" draggable="false">
+        </div>
+    </div>
+
+    <div class="row" id="loader_pokemon_details_wrapper" ng-show="loading">
+        <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <div id="loader_pokemon">
+                <img src="assets/images/pokeball.png" class="img-responsive" draggable="false">
+                <p class="loader_pokemon_text">Chargement</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 40px;" ng-show="!loading">
+        <div class="col-xs-12 col-md-6">
+            <div class="table-responsive ng-cloak">
+                <table class="table table-bordered table-striped" style="background-color: white;"
+                       id="pokemon_information_table">
+                    <tbody>
+                    <tr>
+                        <td rowspan="5" class="col-md-2 text-center" style="vertical-align: middle;">
+                            <img src="http://img.pokemondb.net/sprites/black-white/anim/normal/{{pokemon.name}}.gif"
+                                 alt="" class="img-responsive" style="width: 120%" draggable="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-xs-5">Numéro - Nom</td>
+                        <td class="ng-cloak col-xs-5" style="text-transform: capitalize">#{{pokemon.id}} - {{pokemon.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Taille</td>
+                        <td class="ng-cloak">{{pokemon.height / 10 + ' m'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Poids</td>
+                        <td class="ng-cloak">{{pokemon.weight / 10 + ' kg'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Expérience de base</td>
+                        <td class="ng-cloak">{{pokemon.base_experience + ' XP'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="assets/js/custom.js"></script>

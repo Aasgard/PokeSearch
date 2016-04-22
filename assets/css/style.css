@@ -1,0 +1,125 @@
+body {
+    background: url("../images/pokebg.jpg") fixed center top #79c9fa repeat-x;
+    background-position: 0 160px;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+@font-face {
+    font-family: Pokemon Font;
+    src: url("../fonts/Pokemon.ttf");
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(9deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(9deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotate360X {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.input-group-addon {
+    font-weight: bold;
+}
+
+#website_title {
+    color: #222222;
+    font-family: Pokemon Font;
+    font-weight: bold;
+    font-size: 3vw;
+    text-shadow: -4px 6px 5px rgba(255, 255, 255, 1);
+}
+
+#home_pikachu_logo {
+    border: 5px solid black;
+    width: 250px;
+    margin-top: 30px;
+}
+
+#loader_pokemon {
+    width: 100%;
+}
+
+#loader_pokemon img {
+    width: 50%;
+    margin: 30px auto 20px auto;
+
+    -webkit-animation: shake .5s infinite alternate;
+    animation: shake .5s infinite alternate;
+}
+
+.rotate360X{
+    -webkit-animation: rotate360X 1s infinite linear;
+    animation: rotate360X 1s infinite linear;
+}
+
+#loader_pokemon p {
+    text-align: center;
+    font-family: "Pokemon Font";
+    font-size: 20px;
+    font-weight: bold;
+
+    -webkit-animation: fade 3s infinite;
+    animation: fade 3s infinite;
+}
+
+#pokemon_details_title {
+    color: #222222;
+    font-family: Pokemon Font;
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+#pokemon_information_table tbody tr td:first-child{
+    font-weight: bold;
+}
+
+/* Quand l'écran passe en md */
+@media all and (max-width: 990px) {
+
+    #pokemon_image_details {
+        display: block;
+        margin: 20px auto 0 auto;
+    }
+}
+
+/* Quand l'écran passe en md */
+@media all and (min-width: 991px) {
+    .cell_to_vertical_align {
+        display: table-cell;
+        height: 100%;
+        float: none;
+    }
+
+    #pokemon_details_title {
+        float: right;
+    }
+
+    #pokemon_image_details {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.angucomplete-dropdown {
+    overflow-y: auto;
+    max-height: 80px;
+    width:100%;
+}
